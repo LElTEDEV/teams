@@ -1,3 +1,5 @@
+import { useNavigation } from "@react-navigation/native";
+
 import { Container, Logo, BackButton } from "./styles";
 import AntDesign from "@expo/vector-icons/AntDesign";
 
@@ -9,10 +11,16 @@ type Props = {
 };
 
 export function Header({ showBackButton = false }: Props) {
+  const navigation = useNavigation();
+
+  function handleGoBack() {
+    navigation.navigate("groups");
+  }
+
   return (
     <Container>
       {showBackButton && (
-        <BackButton>
+        <BackButton onPress={handleGoBack}>
           <AntDesign name="arrowleft" size={36} color={theme.COLORS.WHITE} />
         </BackButton>
       )}

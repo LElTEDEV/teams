@@ -1,4 +1,4 @@
-import { Players } from "./src/screens/Players";
+import { Routes } from "@/routes";
 import { Loading } from "@/components/Loading";
 
 import {
@@ -13,8 +13,12 @@ export default function App() {
 
   return (
     <>
-      {fontLoaded ? <Players /> : <Loading />}
-      <StatusBar barStyle="light-content" backgroundColor="transparent" />
+      {fontLoaded ? <Routes /> : <Loading />}
+      <StatusBar
+        barStyle="light-content"
+        backgroundColor="transparent"
+        translucent
+      />
     </>
   );
 }
